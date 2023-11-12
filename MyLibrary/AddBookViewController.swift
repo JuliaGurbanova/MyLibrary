@@ -45,7 +45,15 @@ class AddBookViewController: UIViewController {
     }()
 
     @objc func resetButtonAction(sender: UIButton) {
+        resetField()
+    }
 
+    func resetField() {
+        bookTextField.text = ""
+        authorTextField.text = ""
+        genreTextField.text = ""
+        statusTextField.text = ""
+        bookTextField.becomeFirstResponder()
     }
 
     @objc func saveButtonAction(sender: UIButton) {
@@ -104,7 +112,14 @@ class AddBookViewController: UIViewController {
         databaseFunctions.group.enter()
         databaseFunctions.saveBook(book: book)
         databaseFunctions.group.notify(queue: .main) {
-            print("Record Saved")
+            let alertController = UIAlertController(title: "Save Alert", message: "Book '\(self.book.bookname!)' is Saved", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+                self.tabBarController?.selectedIndex = 0
+            }
+
+            alertController.addAction(okAction)
+            self.resetField()
+            self.present(alertController, animated: true)
         }
     }
 

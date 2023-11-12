@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12DD7DC2B013B8D0072B9BF /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DD7DB2B013B8D0072B9BF /* BooksViewController.swift */; };
 		C130714F2AF937B0000C5041 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130714E2AF937B0000C5041 /* CommonFunctions.swift */; };
 		C13071512AF94A76000C5041 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13071502AF94A76000C5041 /* DatabaseFunctions.swift */; };
 		C164830C2AD847BA00A0E4CA /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164830B2AD847BA00A0E4CA /* AddBookViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12DD7DB2B013B8D0072B9BF /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		C130714E2AF937B0000C5041 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		C13071502AF94A76000C5041 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
 		C164830B2AD847BA00A0E4CA /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				C19908F52AD7268E00CFD56C /* SceneDelegate.swift */,
 				C19908F72AD7268E00CFD56C /* ViewController.swift */,
 				C164830B2AD847BA00A0E4CA /* AddBookViewController.swift */,
+				C12DD7DB2B013B8D0072B9BF /* BooksViewController.swift */,
 				C13071502AF94A76000C5041 /* DatabaseFunctions.swift */,
 				C130714E2AF937B0000C5041 /* CommonFunctions.swift */,
 				C19908F92AD7268E00CFD56C /* Main.storyboard */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13071512AF94A76000C5041 /* DatabaseFunctions.swift in Sources */,
+				C12DD7DC2B013B8D0072B9BF /* BooksViewController.swift in Sources */,
 				C130714F2AF937B0000C5041 /* CommonFunctions.swift in Sources */,
 				C19908F82AD7268E00CFD56C /* ViewController.swift in Sources */,
 				C164830C2AD847BA00A0E4CA /* AddBookViewController.swift in Sources */,

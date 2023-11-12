@@ -9,6 +9,8 @@ import CloudKit
 import UIKit
 
 class DatabaseFunctions: NSObject {
+    var books = [Book]()
+
     class Book {
         var bookname: String!
         var authorname: String!
@@ -40,5 +42,34 @@ class DatabaseFunctions: NSObject {
                 }
             }
         })
+    }
+
+    func bookQuery() {
+        let pred = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Book", predicate: pred)
+        let operation = CKQueryOperation(query: query)
+        CKContainer.default().privateCloudDatabase.add(operation)
+        let ckRecordZoneID = CKRecordZone(zoneName: "_defaultZone")
+        operation.zoneID = ckRecordZoneID.zoneID
+        operation.zoneID = ckRecordZoneID.zoneID
+        operation.recordFetchedBlock = { record in
+            let book = Book()
+            book.bookname = record["bookname"]
+            book.authorname = record["authorname"]
+            book.genre = record["genre"]
+            book.status = record["status"]
+            self.books.append(book)
+        }
+        operation.queryCompletionBlock = { [unowned self] (cursor, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    self.syncQueue.async {
+                        self.group.leave()
+                    }
+                }
+            }
+        }
     }
 }
