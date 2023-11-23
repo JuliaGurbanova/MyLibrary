@@ -72,4 +72,37 @@ class DatabaseFunctions: NSObject {
             }
         }
     }
+
+    func deleteBook(bookname: String, authorname: String) {
+        var taskRecords = [CKRecord.ID]()
+        let pred = NSPredicate(format: "bookname == %@ && authorname == %@", bookname, authorname)
+        let query = CKQuery(recordType: "Book", predicate: pred)
+        let operation = CKQueryOperation(query: query)
+        let ckRecordZoneID = CKRecordZone(zoneName: "_defaultZone")
+        operation.zoneID = ckRecordZoneID.zoneID
+
+        CKContainer.default().privateCloudDatabase.add(operation)
+        operation.recordFetchedBlock = { record in
+            taskRecords.append(record.recordID)
+        }
+        operation.queryCompletionBlock = { (cursor, error) in
+            DispatchQueue.main.async {
+                let modifyRecordsOperation = CKModifyRecordsOperation.init(recordsToSave: nil, recordIDsToDelete: taskRecords)
+
+                modifyRecordsOperation.modifyRecordsCompletionBlock = { records, recordIDs, error in
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            print(error)
+                        } else {
+                            self.syncQueue.async {
+                                self.group.leave()
+                            }
+                        }
+                    }
+                }
+
+                CKContainer.default().privateCloudDatabase.add(modifyRecordsOperation)
+            }
+        }
+    }
 }

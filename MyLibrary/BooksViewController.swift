@@ -66,6 +66,23 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return "My Books"
     }
 
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
+            self.databaseFunctions.group.enter()
+            self.databaseFunctions.deleteBook(bookname: self.databaseFunctions.books[indexPath.row].bookname,
+                                              authorname: self.databaseFunctions.books[indexPath.row].authorname)
+            self.databaseFunctions.group.notify(queue: .main) {
+                self.databaseFunctions.books.remove(at: indexPath.row)
+                self.bookTableView.reloadData()
+            }
+        }
+
+        deleteAction.backgroundColor = .red
+        deleteAction.image = UIImage(systemName: "trash")
+
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
 
     /*
     // MARK: - Navigation
