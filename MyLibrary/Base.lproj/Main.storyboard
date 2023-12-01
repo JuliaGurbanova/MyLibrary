@@ -27,7 +27,7 @@
         <!--Search-->
         <scene sceneID="gT1-ND-i5t">
             <objects>
-                <viewController id="ASR-yY-gb7" sceneMemberID="viewController">
+                <viewController id="ASR-yY-gb7" customClass="SearchBookViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BhR-1W-vvL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

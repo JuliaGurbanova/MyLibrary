@@ -21,6 +21,7 @@
 		C199090F2AD7268F00CFD56C /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199090E2AD7268F00CFD56C /* MyLibraryTests.swift */; };
 		C19909192AD7268F00CFD56C /* MyLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19909182AD7268F00CFD56C /* MyLibraryUITests.swift */; };
 		C199091B2AD7268F00CFD56C /* MyLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199091A2AD7268F00CFD56C /* MyLibraryUITestsLaunchTests.swift */; };
+		C1F1BEBE2B1A2C380039D81B /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1BEBD2B1A2C380039D81B /* SearchBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C19909142AD7268F00CFD56C /* MyLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19909182AD7268F00CFD56C /* MyLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryUITests.swift; sourceTree = "<group>"; };
 		C199091A2AD7268F00CFD56C /* MyLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C1F1BEBD2B1A2C380039D81B /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				C19908F72AD7268E00CFD56C /* ViewController.swift */,
 				C164830B2AD847BA00A0E4CA /* AddBookViewController.swift */,
 				C12DD7DB2B013B8D0072B9BF /* BooksViewController.swift */,
+				C1F1BEBD2B1A2C380039D81B /* SearchBookViewController.swift */,
 				C13071502AF94A76000C5041 /* DatabaseFunctions.swift */,
 				C130714E2AF937B0000C5041 /* CommonFunctions.swift */,
 				C19908F92AD7268E00CFD56C /* Main.storyboard */,
@@ -277,6 +280,7 @@
 			files = (
 				C13071512AF94A76000C5041 /* DatabaseFunctions.swift in Sources */,
 				C12DD7DC2B013B8D0072B9BF /* BooksViewController.swift in Sources */,
+				C1F1BEBE2B1A2C380039D81B /* SearchBookViewController.swift in Sources */,
 				C130714F2AF937B0000C5041 /* CommonFunctions.swift in Sources */,
 				C19908F82AD7268E00CFD56C /* ViewController.swift in Sources */,
 				C164830C2AD847BA00A0E4CA /* AddBookViewController.swift in Sources */,
